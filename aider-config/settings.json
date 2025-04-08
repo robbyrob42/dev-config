@@ -1,0 +1,40 @@
+// Folder-specific settings
+//
+// For a full list of overridable settings, and general information on folder-specific settings,
+// see the documentation: https://zed.dev/docs/configuring-zed#settings-files
+{
+  "lsp": {
+    "pyright": {
+      "settings": {
+        "python": {
+          "pythonPath": "/Users/robertjacques/EndgameProjects/cerebro/src/slack/.venv/bin/python"
+        }
+      }
+    }
+    //"cst-lsp": {
+    //  "command": "/Users/robertjacques/.pyenv/versions/3.11.3/envs/revereprodVenv/bin/cst-lsp"
+    //}
+  },
+  "terminal": {
+    "shell": {
+      "program": "/opt/homebrew/opt/zsh/bin/zsh"
+    },
+    "dock": "right",
+    "default_width": 800,
+    "default_height": 500,
+    "working_directory": "current_project_directory",
+    "detect_venv": {
+      "on": {
+        "directories": [
+          "/Users/robertjacques/EndgameProjects/cerebro/src/slack/.venv/bin/python"
+        ],
+        "activate_script": "default"
+      }
+    }
+  },
+  "languages": {
+    "Python": {
+      "language_servers": ["pyright", "python-refactoring"]
+    }
+  }
+}

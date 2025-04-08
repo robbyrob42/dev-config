@@ -1,0 +1,18 @@
+# Ignore Everything
+/*
+
+# Allow common-py/[core, gcp mesh], readme files
+!src/common-py/core/README.md
+!src/common-py/gcp/README.md
+!src/common-py/mesh/README.md
+
+#Allow data mesh model yaml definitions
+!src/data-mesh/internal/mesh/catalog/resources/slack
+!src/data-mesh/internal/mesh/catalog/resources/slack/**
+
+#add slack folder to allow list
+!src/slack/
+!src/slack/**
+!src/slack/**/**
+!src/slack/**/**/**
+!src/slack/**/**/**/**
