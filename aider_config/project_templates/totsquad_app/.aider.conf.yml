@@ -1,4 +1,3 @@
-
 ##########################################################
 
 # Note: You can only put OpenAI and Anthropic API keys in the yaml
@@ -15,7 +14,7 @@
 # Main model:
 
 ## Specify the model to use for the main chat
-model: sonnet 
+model: sonnet
 
 ########################
 # API Keys and settings:
@@ -150,7 +149,7 @@ map-multiplier-no-files: 3
 #restore-chat-history: false
 
 ## Log the conversation with the LLM to this file (for example, .aider.llm.history)
-llm-history-file: .aider.llm.history
+llm-history-file: ./.aider.llm.history
 
 ##################
 # Output settings:
@@ -213,7 +212,7 @@ show-diffs: true
 aiderignore: ./.aiderignore
 
 ## Only consider files in the current subtree of the git repository
-subtree-only: false
+subtree-only: true
 
 ## Enable/disable auto commit of LLM changes (default: True)
 #auto-commits: true
@@ -367,7 +366,9 @@ watch-files: true
 #read: xxx
 ## Specify multiple values like this:
 read:
-##  - /Users/robertjacques/EndgameProjects/cerebro/src/common-py
+  - /Users/robertjacques/RootSystemProjects/app/rubocop.yml
+  - /Users/robertjacques/RootSystemProjects/app/README.md
+  - /Users/robertjacques/RootSystemProjects/app/Gemfile
 
 ## Use VI editing mode in the terminal (default: False)
 vim: true
@@ -395,7 +396,6 @@ config: ./.aider.conf.yml
 
 ## Specify the .env file to load (default: .env in git root)
 env-file: ./.aider.env
-
 ## Enable/disable suggesting shell commands (default: True)
 #suggest-shell-commands: true
 
@@ -416,4 +416,3 @@ env-file: ./.aider.env
 
 ## Specify which editor to use for the /editor command
 #editor: xxx
-

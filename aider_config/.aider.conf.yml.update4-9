@@ -1,4 +1,7 @@
-
+##########################################################
+# Sample .aider.conf.yml
+# This file lists *all* the valid configuration entries.
+# Place in your home dir, or at the root of your git repo.
 ##########################################################
 
 # Note: You can only put OpenAI and Anthropic API keys in the yaml
@@ -15,7 +18,7 @@
 # Main model:
 
 ## Specify the model to use for the main chat
-model: sonnet 
+#model: xxx
 
 ########################
 # API Keys and settings:
@@ -78,10 +81,10 @@ model: sonnet
 #  - zzz
 
 ## Set the reasoning_effort API parameter (default: not set)
-reasoning-effort: medium
+#reasoning-effort: xxx
 
 ## Set the thinking token budget for models that support it (default: not set)
-thinking-tokens: 6k
+#thinking-tokens: xxx
 
 ## Verify the SSL cert when connecting to models (default: True)
 #verify-ssl: true
@@ -90,22 +93,22 @@ thinking-tokens: 6k
 #timeout: xxx
 
 ## Specify what edit format the LLM should use (default depends on model)
-edit-format: diff
+#edit-format: xxx
 
 ## Use architect edit format for the main chat
-architect: true
+#architect: false
 
 ## Enable/disable automatic acceptance of architect changes (default: True)
 #auto-accept-architect: true
 
 ## Specify the model to use for commit messages and chat history summarization (default depends on --model)
-weak-model: 4o
+#weak-model: xxx
 
 ## Specify the model to use for editor tasks (default depends on --model)
-editor-model: sonnet
+#editor-model: xxx
 
 ## Specify the edit format for the editor model (default: depends on editor model)
-editor-edit-format: editor-diff
+#editor-edit-format: xxx
 
 ## Only work with models that have meta-data available (default: True)
 #show-model-warnings: true
@@ -120,22 +123,22 @@ editor-edit-format: editor-diff
 # Cache settings:
 
 ## Enable caching of prompts (default: False)
-cache-prompts: true
+#cache-prompts: false
 
 ## Number of times to ping at 5min intervals to keep prompt cache warm (default: 0)
-cache-keepalive-pings: 2
+#cache-keepalive-pings: false
 
 ###################
 # Repomap settings:
 
 ## Suggested number of tokens to use for repo map, use 0 to disable
-map-tokens: 6000
+#map-tokens: xxx
 
 ## Control how often the repo map is refreshed. Options: auto, always, files, manual (default: auto)
 #map-refresh: auto
 
 ## Multiplier for map tokens when no files are specified (default: 2)
-map-multiplier-no-files: 3
+#map-multiplier-no-files: true
 
 ################
 # History Files:
@@ -150,7 +153,7 @@ map-multiplier-no-files: 3
 #restore-chat-history: false
 
 ## Log the conversation with the LLM to this file (for example, .aider.llm.history)
-llm-history-file: .aider.llm.history
+#llm-history-file: xxx
 
 ##################
 # Output settings:
@@ -198,7 +201,7 @@ llm-history-file: .aider.llm.history
 #code-theme: default
 
 ## Show diffs when committing changes (default: False)
-show-diffs: true
+#show-diffs: false
 
 ###############
 # Git settings:
@@ -210,10 +213,10 @@ show-diffs: true
 #gitignore: true
 
 ## Specify the aider ignore file (default: .aiderignore in git root)
-aiderignore: ./.aiderignore
+#aiderignore: .aiderignore
 
 ## Only consider files in the current subtree of the git repository
-subtree-only: false
+#subtree-only: false
 
 ## Enable/disable auto commit of LLM changes (default: True)
 #auto-commits: true
@@ -222,10 +225,10 @@ subtree-only: false
 #dirty-commits: true
 
 ## Attribute aider code changes in the git author name (default: True)
-attribute-author: false
+#attribute-author: true
 
 ## Attribute aider commits in the git committer name (default: True)
-attribute-committer: false
+#attribute-committer: true
 
 ## Prefix commit messages with 'aider: ' if aider authored the changes (default: False)
 #attribute-commit-message-author: false
@@ -249,7 +252,7 @@ attribute-committer: false
 #skip-sanity-check-repo: false
 
 ## Enable/disable watching files for ai coding comments (default: False)
-watch-files: true
+#watch-files: false
 
 ########################
 # Fixing and committing:
@@ -366,11 +369,13 @@ watch-files: true
 ## specify a read-only file (can be used multiple times)
 #read: xxx
 ## Specify multiple values like this:
-read:
-##  - /Users/robertjacques/EndgameProjects/cerebro/src/common-py
+#read:
+#  - xxx
+#  - yyy
+#  - zzz
 
 ## Use VI editing mode in the terminal (default: False)
-vim: true
+#vim: false
 
 ## Specify the language to use in the chat (default: None, uses system settings)
 #chat-language: xxx
@@ -391,10 +396,10 @@ vim: true
 #line-endings: platform
 
 ## Specify the config file (default: search for .aider.conf.yml in git root, cwd or home directory)
-config: ./.aider.conf.yml
+#config: xxx
 
 ## Specify the .env file to load (default: .env in git root)
-env-file: ./.aider.env
+#env-file: .env
 
 ## Enable/disable suggesting shell commands (default: True)
 #suggest-shell-commands: true
@@ -417,3 +422,38 @@ env-file: ./.aider.env
 ## Specify which editor to use for the /editor command
 #editor: xxx
 
+############################
+# Deprecated model settings:
+
+## Use claude-3-opus-20240229 model for the main chat (deprecated, use --model)
+#opus: false
+
+## Use anthropic/claude-3-7-sonnet-20250219 model for the main chat (deprecated, use --model)
+#sonnet: false
+
+## Use claude-3-5-haiku-20241022 model for the main chat (deprecated, use --model)
+#haiku: false
+
+## Use gpt-4-0613 model for the main chat (deprecated, use --model)
+#4: false
+
+## Use gpt-4o model for the main chat (deprecated, use --model)
+#4o: false
+
+## Use gpt-4o-mini model for the main chat (deprecated, use --model)
+#mini: false
+
+## Use gpt-4-1106-preview model for the main chat (deprecated, use --model)
+#4-turbo: false
+
+## Use gpt-3.5-turbo model for the main chat (deprecated, use --model)
+#35turbo: false
+
+## Use deepseek/deepseek-chat model for the main chat (deprecated, use --model)
+#deepseek: false
+
+## Use o1-mini model for the main chat (deprecated, use --model)
+#o1-mini: false
+
+## Use o1-preview model for the main chat (deprecated, use --model)
+#o1-preview: false
